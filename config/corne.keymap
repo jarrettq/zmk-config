@@ -12,6 +12,12 @@
 #define LOWEST 1
 #define RAISE 2
 #define LOWER 3
+#define CTLRT &mt LCTRL T //mod-tap ctrl for left hand
+#define ALT_S &mt LALT S //mod-tap alt for left hand
+#define GUI_R &mt LGUI R //mod-tap windows for left hand
+#define CTL_N &mt RCTRL N //mod-tap ctrl for right hand
+#define ALT_E &mt RALT E //mod-tap alt for right hand
+#define GUI_I &mt RGUI I //mod-tap windows for right hand
 
 / {
         keymap {
@@ -24,10 +30,10 @@
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |  \  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp ESC
-   &kp BKSP  &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                  &kp LGUI &mo 1 &kp LCTRL   &kp SPACE &kp LSHFT &kp RET
+   &kp TAB   &kp Q &kp W  &kp F &kp P  &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp ESC
+   &kp BKSP  &kp A GUI_R  ALT_S CTLRT  &kp G   &kp M CTL_N  ALT_E     GUI_I   &kp O    &kp SQT
+   &kp LSHFT &kp Z &kp X  &kp C &kp D  &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp BSLH
+                    &kp LGUI &mo 1 &kp LCTRL   &kp SPACE &kp LSHFT &kp RET
                         >;
                 };
 
