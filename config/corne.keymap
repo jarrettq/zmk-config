@@ -10,8 +10,9 @@
 
 #define DEFAULT 0
 #define LOWEST 1
-#define RAISE 2
-#define LOWER 3
+#define LOWER 2
+#define RAISE 3
+
 #define CTLRT &bhm LCTRL T //mod-tap ctrl for left hand
 #define ALT_S &bhm LALT S //mod-tap alt for left hand
 #define GUI_R &bhm LGUI R //mod-tap windows for left hand
@@ -57,7 +58,7 @@
                         bindings = <
    &kp TAB    &trans       &trans     &kp UP    &trans      &trans      &kp N6   &kp N7   &kp N8 &kp N9   &trans  &kp GRAVE
    &kp DEL    &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT    &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6   &kp EQUAL &trans
-   &kp LSHFT  &trans       &trans     &trans    &trans       &trans         &trans   &kp N1   &kp N2 &kp N3   &kp MINUS &to LOWER
+   &kp LSHFT  &trans       &trans     &trans    &trans       &trans         &trans   &kp N1   &kp N2 &kp N3   &kp MINUS &to 2
                                       &kp LGUI  &to 0        &kp SPACE      &kp RET  &trans   &kp N0
                         >;
                 };     
