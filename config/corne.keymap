@@ -12,12 +12,12 @@
 #define LOWEST 1
 #define RAISE 2
 #define LOWER 3
-#define CTLRT &mt LCTRL T //mod-tap ctrl for left hand
-#define ALT_S &mt LALT S //mod-tap alt for left hand
-#define GUI_R &mt LGUI R //mod-tap windows for left hand
-#define CTL_N &mt RCTRL N //mod-tap ctrl for right hand
-#define ALT_E &mt RALT E //mod-tap alt for right hand
-#define GUI_I &mt RGUI I //mod-tap windows for right hand
+#define CTLRT &ht_bl LCTRL T //mod-tap ctrl for left hand
+#define ALT_S &ht_bl LALT S //mod-tap alt for left hand
+#define GUI_R &ht_bl LGUI R //mod-tap windows for left hand
+#define CTL_N &ht_bl RCTRL N //mod-tap ctrl for right hand
+#define ALT_E &ht_bl RALT E //mod-tap alt for right hand
+#define GUI_I &ht_bl RGUI I //mod-tap windows for right hand
 
 / {
         keymap {
