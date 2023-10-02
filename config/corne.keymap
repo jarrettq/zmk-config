@@ -12,14 +12,25 @@
 #define LOWEST 1
 #define RAISE 2
 #define LOWER 3
-#define CTLRT &ht_bl LCTRL T //mod-tap ctrl for left hand
-#define ALT_S &ht_bl LALT S //mod-tap alt for left hand
-#define GUI_R &ht_bl LGUI R //mod-tap windows for left hand
-#define CTL_N &ht_bl RCTRL N //mod-tap ctrl for right hand
-#define ALT_E &ht_bl RALT E //mod-tap alt for right hand
-#define GUI_I &ht_bl RGUI I //mod-tap windows for right hand
+#define CTLRT &bhm LCTRL T //mod-tap ctrl for left hand
+#define ALT_S &bhm LALT S //mod-tap alt for left hand
+#define GUI_R &bhm LGUI R //mod-tap windows for left hand
+#define CTL_N &bhm RCTRL N //mod-tap ctrl for right hand
+#define ALT_E &bhm RALT E //mod-tap alt for right hand
+#define GUI_I &bhm RGUI I //mod-tap windows for right hand
 
 / {
+    behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };       
         keymap {
                 compatible = "zmk,keymap";
 
