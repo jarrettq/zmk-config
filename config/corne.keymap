@@ -51,13 +51,13 @@
                 lowest_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  UP |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |  DEL | LFTR| LFT | DWN | RGT | RGTR|   | LFT |  4  |  5  |  6  |     |      |
-// | SHFT |     |     |     |     |     |   |     |  1  |  2  |  3  |     |      |
+// |  DEL | LFTR| LFT | DWN | RGT | RGTR|   | LFT |  4  |  5  |  6  |  =  |      |
+// | SHFT |     |     |     |     |     |   |     |  1  |  2  |  3  |  -  | LOWR |
 //                    | GUI |     | SPC |   | ENT |     |  0  |
                         bindings = <
    &kp TAB    &trans       &trans     &kp UP    &trans      &trans      &kp N6   &kp N7   &kp N8 &kp N9   &trans  &kp BSPC
-   &kp DEL    &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT    &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6   &trans &trans
-   &kp LSHFT  &trans       &trans     &trans    &trans       &trans         &trans   &kp N1   &kp N2 &kp N3   &trans &tog LOWER
+   &kp DEL    &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT    &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6   &kp EQUAL &trans
+   &kp LSHFT  &trans       &trans     &trans    &trans       &trans         &trans   &kp N1   &kp N2 &kp N3   &kp MINUS &to LOWER
                                       &kp LGUI  &to 0        &kp SPACE      &kp RET  &trans   &kp N0
                         >;
                 };     
