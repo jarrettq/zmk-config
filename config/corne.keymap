@@ -91,7 +91,7 @@
                                 &kp LGUI &to 0    &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
-
+// this is an example for steve
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
