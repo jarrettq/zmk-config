@@ -9,9 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LOWEST 1
-#define LOWER 2
-#define RAISE 3
+#define QWERTY 1
+#define NUM 2
+#define LOWER 3
+#define RAISE 4
 
 #define CTLRT &bhm LCTRL T //mod-tap ctrl for left hand
 #define ALT_S &bhm LALT S //mod-tap alt for left hand
@@ -45,20 +46,34 @@
    &kp TAB   &kp Q &kp W  &kp F &kp P  &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp ESC
    &kp BKSP  &kp A GUI_R  ALT_S CTLRT  &kp G   &kp M CTL_N  ALT_E     GUI_I   &kp O    &kp SQT
    &kp LSHFT &kp Z &kp X  &kp C &kp D  &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                    &kp LGUI &mo 1 &kp LCTRL   &kp SPACE &kp LSHFT &kp RET
+                    &kp LGUI &mo 2 &kp LCTRL   &kp SPACE &kp LSHFT &kp RET
                         >;
                 };
 
-                lowest_layer {
+                qwerty_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp BKSP  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                      &kp LGUI &mo 2 &kp LCTRL   &kp SPACE &kp LSHFT &kp RET
+                        >;
+                };
+
+                num_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  UP |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // |  DEL | LFTR| LFT | DWN | RGT | RGTR|   | LFT |  4  |  5  |  6  |  =  |      |
 // | SHFT |     |     |     |     |     |   |     |  1  |  2  |  3  |  -  | LOWR |
 //                    | GUI |     | SPC |   | ENT |     |  0  |
                         bindings = <
-   &kp TAB    &trans       &trans     &kp UP    &trans      &trans      &kp N6   &kp N7   &kp N8 &kp N9   &trans  &kp GRAVE
-   &kp DEL    &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT    &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6   &kp EQUAL &trans
-   &kp LSHFT  &trans       &trans     &trans    &trans       &trans         &trans   &kp N1   &kp N2 &kp N3   &kp MINUS &to 2
+   &kp TAB    &trans       &trans     &kp UP    &trans       &trans      &kp N6   &kp N7   &kp N8 &kp N9   &trans  &kp GRAVE
+   &kp DEL    &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT    &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6   &kp EQUAL &to 2
+   &kp LSHFT  &trans       &trans     &kp LPAR  &kp RPAR     &trans         &trans   &kp N1   &kp N2 &kp N3   &kp MINUS &to 3
                                       &kp LGUI  &to 0        &kp SPACE      &kp RET  &trans   &kp N0
                         >;
                 };     
@@ -70,10 +85,10 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &tog RAISE
-                                    &kp LGUI     &to 0       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp TAB    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+   &trans     &trans   &trans   &trans   &trans   &trans      &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &trans       &trans
+   &kp LSHFT  &trans   &trans   &trans   &trans   &trans      &trans     &trans       &trans       &trans       &trans       &tog RAISE
+                                &kp LGUI &to 0    &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
 
