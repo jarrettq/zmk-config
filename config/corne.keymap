@@ -101,7 +101,7 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &trans  &msc SCROLL_DOWN &mmv MOVE_UP     &msc SCROLL_UP    &trans      &trans trans      &trans    &trans &trans &trans
+   &kp  TAB  &trans  &msc SCROLL_DOWN &mmv MOVE_UP     &msc SCROLL_UP    &trans      &trans &trans      &trans    &trans &trans &trans
    &kp LCTRL &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &trans      &trans &mkp LCLK  &mkp RCLK &trans &trans &trans
    &kp LSHFT &trans  &trans           &trans           &trans            &trans      &trans &trans     &trans    &trans &trans &trans
                              &kp LGUI &to 0   &kp SPACE   &kp RET   &trans    &kp RALT
