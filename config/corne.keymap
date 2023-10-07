@@ -66,27 +66,27 @@
 
                 num_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  UP |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// |  TAB |     |     |  UP |     |     |   |     |  7  |  8  |  9  |     |   `  |
 // |  DEL | LFTR| LFT | DWN | RGT | RGTR|   | LFT |  4  |  5  |  6  |  =  |      |
-// | SHFT |     |     |     |     |     |   |     |  1  |  2  |  3  |  -  | LOWR |
+// | SHFT |     |     |     |  (  |  )  |   |     |  1  |  2  |  3  |  -  | LOWR |
 //                    | GUI |     | SPC |   | ENT |     |  0  |
                         bindings = <
-   &kp TAB    &trans       &trans     &kp UP    &trans       &trans      &kp N6   &kp N7   &kp N8 &kp N9   &trans  &kp GRAVE
-   &kp DEL    &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT    &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6   &kp EQUAL &to 1
-   &kp LSHFT  &trans       &trans     &kp LPAR  &kp RPAR     &trans         &trans   &kp N1   &kp N2 &kp N3   &kp MINUS &to 2
-                                      &kp LGUI  &to 0        &kp SPACE      &kp RET  &trans   &kp N0
+   &kp TAB   &trans       &trans     &kp UP    &trans     &trans         &trans   &kp N7   &kp N8 &kp N9  &trans    &kp GRAVE
+   &kp DEL   &kp LC(LEFT) &kp LEFT   &kp DOWN  &kp RIGHT  &kp LC(RIGHT)  &kp LEFT &kp N4   &kp N5 &kp N6  &kp EQUAL &to 1
+   &trans    &trans       &trans     &kp LPAR  &kp RPAR   &trans         &trans   &kp N1   &kp N2 &kp N3  &kp MINUS &to 3
+                                     &kp LGUI  &to 0      &kp SPACE      &kp RET  &trans   &kp N0
                         >;
                 };     
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |  TAB |     |     |     |     |     |   | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5  |
+// |      |     |     |     |     |     |   |      |     |     |     |     |      |
+// | SHFT |     |     |     |     |     |   |      |     |     |     |     | RAISE|
+//                    | GUI | DEF | SPC |   | ENT  |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-   &trans     &trans   &trans   &trans   &trans   &trans      &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &trans       &trans
+   &kp TAB    &trans   &trans   &trans   &trans   &trans      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+   &trans     &trans   &trans   &trans   &trans   &trans      &trans     &trans       &trans       &trans       &trans       &trans
    &kp LSHFT  &trans   &trans   &trans   &trans   &trans      &trans     &trans       &trans       &trans       &trans       &tog RAISE
                                 &kp LGUI &to 0    &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
