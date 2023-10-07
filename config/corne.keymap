@@ -95,9 +95,9 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |     |     | MSUP|     |     |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     | MSLF| MSDN| MSRT|     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// |  TAB |     |     | MSUP|     |     |   |     |     |     |     |     |      |
+// | CTRL |     | MSLF| MSDN| MSRT|     |   |     | LCLK| RCLK|     |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &trans  &msc SCROLL_DOWN &mmv MOVE_UP     &msc SCROLL_UP    &trans      &trans trans      &trans    &trans &trans &trans
