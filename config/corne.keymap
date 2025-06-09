@@ -1,4 +1,6 @@
 
+#define BT 4  // Define BT as layer 4 (bt_layer is the 5th layer, zero-indexed)
+
 / {
   behaviors {
     esc_bt_layer {
