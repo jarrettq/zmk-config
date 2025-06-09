@@ -1,4 +1,3 @@
-
 / {
   behaviors {
     esc_bt_layer {
@@ -11,7 +10,6 @@
       tap-binding = &kp ESC;
     };
   };
-};
 
   keymap {
     compatible = "zmk,keymap";
