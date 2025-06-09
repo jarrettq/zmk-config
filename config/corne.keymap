@@ -5,13 +5,13 @@
 
     default_layer {
       bindings = <
-        &kp TAB     &kp Q      &mt LGUI W       &mt LALT F       &mt LCTRL P     &kp B              &kp J       &mt RCTRL L &mt RALT U       &mt RGUI Y       &kp SCLN        &lt 4 ESC
+        &kp TAB     &kp Q      &kp W            &kp F            &kp P           &kp B              &kp J       &kp L       &kp U            &kp Y            &kp SEMI        &lt 4 ESC
 
         &kp BSPC    &kp A      &kp R            &kp S            &kp T           &kp G              &kp M       &kp N       &kp E            &kp I            &kp O           &kp QUOT
 
-        &kp LSFT    &kp Z      &kp X            &kp C            &kp D           &kp V              &kp K       &kp H       &kp COMMA        &kp DOT          &kp SLASH       &kp BSLASH
+        &kp LSHFT   &kp Z      &kp X            &kp C            &kp D           &kp V              &kp K       &kp H       &kp COMMA        &kp DOT          &kp FSLH        &kp BSLH
 
-                                                &kp LGUI         &tt 1           &mt LCTRL SPACE    &kp SPACE   &kp RSFT    &lt 2 ENTER
+                                                &kp LGUI         &lt 1 TAB       &kp SPACE          &kp SPACE   &kp RSHFT   &lt 2 RET
       >;
     };
 
@@ -29,11 +29,11 @@
 
     layer_2 {
       bindings = <
-        &trans      &trans     &wh RIGHT        &kp MS_UP        &wh UP          &trans            &none       &none      &none            &none            &none           &none
+        &trans      &trans     &trans           &trans           &trans          &trans            &none       &none      &none            &none            &none           &none
 
-        &trans      &trans     &kp MS_LEFT      &kp MS_DOWN      &kp MS_RIGHT    &trans            &none       &kp BTN1   &kp BTN2         &none            &none           &none
+        &trans      &trans     &trans           &trans           &trans          &trans            &none       &trans     &trans           &none            &none           &none
 
-        &trans      &trans     &wh LEFT         &trans           &wh DOWN        &trans            &none       &none      &none            &none            &none           &mo 3
+        &trans      &trans     &trans           &trans           &trans          &trans            &none       &none      &none            &none            &none           &mo 3
 
                                                 &trans           &to 0           &trans            &trans      &trans     &trans
       >;
