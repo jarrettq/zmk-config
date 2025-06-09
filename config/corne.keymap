@@ -9,15 +9,40 @@
       flavor = "hold-preferred";
       binding = &mo 4;
       tap-binding = &kp ESC;
-    };};
+    };
 
-    bt0 { label = "BT 0"; compatible = "zmk,behavior-momentary-layer"; bindings = <&bt BT_SEL 0>; };
-    bt1 { label = "BT 1"; compatible = "zmk,behavior-momentary-layer"; bindings = <&bt BT_SEL 1>; };
-    bt2 { label = "BT 2"; compatible = "zmk,behavior-momentary-layer"; bindings = <&bt BT_SEL 2>; };
-    bt3 { label = "BT 3"; compatible = "zmk,behavior-momentary-layer"; bindings = <&bt BT_SEL 3>; };
-    bt4 { label = "BT 4"; compatible = "zmk,behavior-momentary-layer"; bindings = <&bt BT_SEL 4>; };
-    btclr { label = "BT CLR"; compatible = "zmk,behavior-momentary-layer"; bindings = <&bt BT_CLR>; };
+    bt0 {
+      label = "BT 0";
+      compatible = "zmk,behavior-momentary-layer";
+      bindings = <&bt BT_SEL 0>;
+    };
+    bt1 {
+      label = "BT 1";
+      compatible = "zmk,behavior-momentary-layer";
+      bindings = <&bt BT_SEL 1>;
+    };
+    bt2 {
+      label = "BT 2";
+      compatible = "zmk,behavior-momentary-layer";
+      bindings = <&bt BT_SEL 2>;
+    };
+    bt3 {
+      label = "BT 3";
+      compatible = "zmk,behavior-momentary-layer";
+      bindings = <&bt BT_SEL 3>;
+    };
+    bt4 {
+      label = "BT 4";
+      compatible = "zmk,behavior-momentary-layer";
+      bindings = <&bt BT_SEL 4>;
+    };
+    btclr {
+      label = "BT CLR";
+      compatible = "zmk,behavior-momentary-layer";
+      bindings = <&bt BT_CLR>;
+    };
   };
+};
 
   keymap {
     compatible = "zmk,keymap";
