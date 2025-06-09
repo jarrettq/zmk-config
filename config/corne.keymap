@@ -9,8 +9,7 @@
       #binding-cells = <0>;
       tapping-term-ms = <5000>;
       flavor = "hold-preferred";
-      bindings = <&mo BT>;
-      tap-bindings = <&kp ESC>;
+      bindings = <&mo BT>, <&kp ESC>;
     };
   };
 
