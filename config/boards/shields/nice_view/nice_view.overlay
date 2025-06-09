@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zephyr,display = &nice_view;
+    };
+};
+
+&nice_view {
+    // Set the display update interval to 100ms (10 updates per second)
+    // This provides a reasonable update rate while optimizing for power
+    update-period-ms = <100>;
+    
+    // Custom display settings for left/right sides
+    zmk,is_left_hand = <0>;  // This value will be overridden in shields files for left/right
+};
