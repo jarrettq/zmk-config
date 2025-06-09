@@ -1,22 +1,11 @@
 
 / {
-  behaviors {
-    esc_bt_layer {
-      compatible = "zmk,behavior-hold-tap";
-      label = "ESC_BT_LAYER";
-      #binding-cells = <0>;
-      tapping-term-ms = <5000>;
-      flavor = "hold-preferred";
-      bindings = <&mo 4>, <&kp ESC>;
-    };
-  };
-
   keymap {
     compatible = "zmk,keymap";
 
     default_layer {
       bindings = <
-        &kp TAB     &kp Q      &mt LGUI W       &mt LALT F       &mt LCTRL P     &kp B              &kp J       &mt RCTRL L &mt RALT U       &mt RGUI Y       &kp SCLN        &esc_bt_layer
+        &kp TAB     &kp Q      &mt LGUI W       &mt LALT F       &mt LCTRL P     &kp B              &kp J       &mt RCTRL L &mt RALT U       &mt RGUI Y       &kp SCLN        &lt 4 ESC
 
         &kp BSPC    &kp A      &kp R            &kp S            &kp T           &kp G              &kp M       &kp N       &kp E            &kp I            &kp O           &kp QUOT
 
