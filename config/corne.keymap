@@ -43,7 +43,7 @@
         &kp LSFT    &kp Z      &kp X        &kp C        &kp D         &kp V
         &kp K       &kp H      &kp COMMA    &kp DOT      &kp FSLH      &kp BSLH
 
-                     &kp LGUI  &tt 1        &mt LCTRL SPACE  &kp SPACE   &kp RSFT &lt 2 ENTER
+                     &kp LGUI  &mo 1        &mt LCTRL SPACE  &kp SPACE   &kp RSFT &lt 2 ENTER
       >;
     };
 
