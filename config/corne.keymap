@@ -46,7 +46,7 @@
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
 #define EXCLUDE_KEYS_L LT1 LT2 LT3 LM4 // Keys frequently rolled with right hand home row
 #define EXCLUDE_KEYS_R RT1 RT2 RT3 LM4
-#define HM_TAPPING_TERM 600
+#define HM_TAPPING_TERM 1000
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
 #define BT 3
