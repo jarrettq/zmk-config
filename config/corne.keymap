@@ -44,8 +44,8 @@
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
 #define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
-#define EXCLUDE_KEYS_L LT1 LT2 LT3 // Keys frequently rolled with right hand home row
-#define EXCLUDE_KEYS_R RT1 RT2 RT3
+#define EXCLUDE_KEYS_L LT1 LT2 LT3 LM4 // Keys frequently rolled with right hand home row
+#define EXCLUDE_KEYS_R RT1 RT2 RT3 LM4
 #define HM_TAPPING_TERM 600
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
@@ -66,7 +66,8 @@
 
             flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <100>;                // repeat on tap-into-hold
+            global-quick-tap;
+            quick-tap-ms = <200>;                // repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_R KEYS_T EXCLUDE_KEYS_L>;
@@ -80,7 +81,8 @@
 
             flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <100>;
+            global-quick-tap;
+            quick-tap-ms = <200>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_L KEYS_T EXCLUDE_KEYS_R>;
