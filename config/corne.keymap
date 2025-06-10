@@ -149,7 +149,7 @@
         &trans        &trans        &trans        &trans        &trans        &trans
         &trans        &trans        &trans        &trans        &trans        &trans
 
-                        &trans      &to 0         &trans        &trans        &trans  &trans
+                        &trans      &to 0         &trans        &studio_unlock        &trans  &trans
       >;
     };
   };
