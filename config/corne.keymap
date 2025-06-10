@@ -8,26 +8,46 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 150
 #define BT 3
-#define CTLRP &bhm LCTRL P //mod-tap ctrl for left hand
-#define ALT_F &bhm LALT F //mod-tap alt for left hand
-#define GUI_W &bhm LGUI W //mod-tap windows for left hand
-#define CTL_L &bhm RCTRL L //mod-tap ctrl for right hand
-#define ALT_U &bhm RALT U //mod-tap alt for right hand
-#define GUI_Y &bhm RGUI Y //mod-tap windows for right hand
+#define CTLRP &hm_l LCTRL P //mod-tap ctrl for left hand
+#define ALT_F &hm_l LALT F //mod-tap alt for left hand
+#define GUI_W &hm_l LGUI W //mod-tap windows for left hand
+#define CTL_L &hm_r RCTRL L //mod-tap ctrl for right hand
+#define ALT_U &hm_r RALT U //mod-tap alt for right hand
+#define GUI_Y &hm_r RGUI Y //mod-tap windows for right hand
 
 / {
   behaviors {
-     bhm: balanced_homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;    // <---[[moderate duration]]
-        quick-tap-ms = <200>;
-        require-prior-idle-ms = <125>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };  
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>,  <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-on-release;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+
+            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-on-release;
+        };
   };
 
   keymap {
@@ -44,7 +64,7 @@
         &kp LSFT    &kp Z      &kp X        &kp C        &kp D         &kp V
         &kp K       &kp H      &kp COMMA    &kp DOT      &kp FSLH      &kp BSLH
 
-                     &kp LGUI  &mo 1        &mt LCTRL SPACE  &kp SPACE   &kp RSFT &lt 2 ENTER
+                     &kp LGUI  &mo 1        &hm_l LCTRL SPACE  &kp SPACE   &kp RSFT &lt 2 ENTER
       >;
     };
 
