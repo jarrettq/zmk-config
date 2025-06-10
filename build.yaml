@@ -15,7 +15,7 @@
 include:
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view
-    cmake-args: "-DZMK_CONFIG_FILES=\"/Users/tkl-jarrettq/zmk-config/config/corne.conf;/Users/tkl-jarrettq/zmk-config/config/corne_left.conf\""
+    cmake-args: "-DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y"
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-    cmake-args: "-DZMK_CONFIG_FILES=\"/Users/tkl-jarrettq/zmk-config/config/corne.conf;/Users/tkl-jarrettq/zmk-config/config/corne_right.conf\""
+    cmake-args: "-DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_PERIPHERAL=y"
