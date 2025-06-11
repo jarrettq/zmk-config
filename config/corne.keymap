@@ -70,6 +70,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
+      display-name = "COLEMAK";
       bindings = <
         &kp TAB     &kp Q      GUI_W   ALT_F   CTLRP       &kp B
         &kp J       CTL_L      ALT_U   GUI_Y   &kp SCLN    &lt BT ESC
@@ -85,6 +86,7 @@
     };
 
     layer_1 {
+      display-name = "Num";
       bindings = <
         &trans      &trans     &trans       &kp UP       &trans        &trans
         &trans      &kp N7      &kp N8        &kp N9        &trans        &kp GRAVE
@@ -100,6 +102,7 @@
     };
 
     layer_2 {
+      display-name = "Qwerty";
       bindings = <
         &kp TAB     &kp Q      &kp W        &kp E        &kp R         &kp T
         &kp Y       &kp U      &kp I        &kp O        &kp P         &kp ESC
@@ -115,6 +118,7 @@
     };
 
     layer_3 {
+      display-name = "BT";
       bindings = <
         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
         &trans        &trans        &trans        &trans        &trans        &trans
