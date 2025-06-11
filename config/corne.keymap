@@ -25,8 +25,7 @@
 #define GUI_Y &hm_r RGUI Y //mod-tap windows for right hand
 
 / {
-  behaviors {
-        hm_l: homerow_mods_left {
+  behaviors {        hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>,  <&kp>;
