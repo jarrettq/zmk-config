@@ -64,6 +64,13 @@
           quick-tap-ms = <175>;
           require-prior-idle-ms = <HM_PRIOR_IDLE>;
         };
+
+        td_caps: tap_dance_0 {
+          compatible = "zmk,behavior-tap-dance";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp RSFT>, <&caps_word>, <&kp CAPS>;
+        };
   };
 
   keymap {
@@ -81,7 +88,7 @@
         &kp LSFT    &kp Z      &kp X        &kp C        &kp D         &kp V
         &kp K       &kp H      &kp COMMA    &kp DOT      &kp FSLH      &kp BSLH
 
-                     &kp LGUI  &mo 1   CTLSPC  &kp SPACE   &kp RSFT &lt 2 ENTER
+                     &kp LS(LC(LALT))uh  &mo 1   CTLSPC  &kp SPACE   &td_caps &kp ENTER
       >;
     };
 
@@ -97,7 +104,7 @@
         &trans      &trans     &trans       &trans       &trans        &kp LBKT
         &kp RBKT    &kp N1      &kp N2        &kp N3        &kp MINUS     &mo 2
 
-                     &trans    &trans        &trans       &trans        &trans   &kp 0
+                     &trans    &trans        &trans       &trans        &trans   &kp N0
       >;
     };
 
