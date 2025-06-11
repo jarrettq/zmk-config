@@ -88,7 +88,7 @@
         &kp LSFT    &kp Z      &kp X        &kp C        &kp D         &kp V
         &kp K       &kp H      &kp COMMA    &kp DOT      &kp FSLH      &kp BSLH
 
-                     &kp LS(LC(LALT))uh  &mo 1   CTLSPC  &kp SPACE   &td_caps &kp ENTER
+                     &kp LS(LC(LALT))  &mo 1   CTLSPC  &kp SPACE   &td_caps &kp ENTER
       >;
     };
 
