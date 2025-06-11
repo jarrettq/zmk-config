@@ -55,7 +55,7 @@
         };
 
         hm_ctrl_l: hm_ctrl_l {
-          compatible = "zkm,behavior-hold-tap"; 
+          compatible = "zmk,behavior-hold-tap"; 
           #binding-cells = <2>; 
           bindings = <&kp>, <&kp>;
 
@@ -70,7 +70,7 @@
     compatible = "zmk,keymap";
 
     default_layer {
-      display-name = "COLEMAK";
+      display-name = "Colemak";
       bindings = <
         &kp TAB     &kp Q      GUI_W   ALT_F   CTLRP       &kp B
         &kp J       CTL_L      ALT_U   GUI_Y   &kp SCLN    &lt BT ESC
