@@ -23,7 +23,7 @@
 #define CTL_L &hm_r RCTRL L //mod-tap ctrl for right hand
 #define ALT_U &hm_r RALT U //mod-tap alt for right hand
 #define GUI_Y &hm_r RGUI Y //mod-tap windows for right hand
-#define CTL_SPC &hm_ctrl_l LCTRL SPACE
+#define CTLSPC &hm_ctrl_l LCTRL SPACE
 
 / {
   behaviors {        hm_l: homerow_mods_left {
@@ -81,7 +81,7 @@
         &kp LSFT    &kp Z      &kp X        &kp C        &kp D         &kp V
         &kp K       &kp H      &kp COMMA    &kp DOT      &kp FSLH      &kp BSLH
 
-                     &kp LGUI  &mo 1        CTL_SPC  &kp SPACE   &kp RSFT &lt 2 ENTER
+                     &kp LGUI  &mo 1   CTLSPC  &kp SPACE   &kp RSFT &lt 2 ENTER
       >;
     };
 
