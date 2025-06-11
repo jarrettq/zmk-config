@@ -1,14 +1,15 @@
 # Custom Corne Display Setup
 
-This setup displays a **custom 180x64 pixel binary image** on the right half of your Corne keyboard's nice!view display.
+This setup completely replaces the default ZMK status screen with custom displays for both halves of your Corne keyboard.
 
-## Current Setup: Binary Image Display
+## Current Setup: Custom Display for Both Halves
 
-Your right half will show your custom image with a simple "R" indicator in the bottom-right corner to identify it as the right half.
+**Right Half:** Your custom 180x64 pixel binary image with "R" indicator  
+**Left Half:** Simple "CORNE KEYBOARD" text display with "Left Half" indicator
 
 ## Files Created
 
-- `custom_display/custom_status_screen.c` - Main display logic
+- `custom_display/custom_status_screen.c` - Main display logic with half detection
 - `custom_display/custom_status_screen.h` - Header file  
 - `custom_display/custom_image.c` - Binary image data (180x64, 1-bit indexed)
 - `custom_display/custom_image.h` - Image header
@@ -17,16 +18,29 @@ Your right half will show your custom image with a simple "R" indicator in the b
 
 ## Display Layout
 
+**Right Half:**
 - **Main Area**: Your custom 180x64 pixel image
-- **Bottom Right**: Simple "R" indicator for right half
-- **Left Half**: Default ZMK status screen with battery/layer/connection info
+- **Bottom Right**: Small "R" indicator
+
+**Left Half:**
+- **Center**: "CORNE KEYBOARD" text
+- **Bottom**: "Left Half" indicator
 
 ## Build and Flash
 
 1. **Commit & Push** your changes to trigger GitHub Actions build
-2. **Download** the new `corne_right-nice_nano_v2-zmk.uf2` firmware
-3. **Flash** it to your right half
-4. **Enjoy** your custom image display!
+2. **Download** both firmware files:
+   - `corne_left-nice_nano_v2-zmk.uf2` (for left half)
+   - `corne_right-nice_nano_v2-zmk.uf2` (for right half)  
+3. **Flash** each firmware to the corresponding half
+4. **Enjoy** your custom displays!
+
+## Key Changes Made
+
+- ✅ **Disabled default widgets** to prevent conflicts
+- ✅ **Half detection** shows different content on each side
+- ✅ **Clean custom display** without stock widget interference
+- ✅ **No symbol conflicts** with simplified approach
 
 ## Switching to ASCII Art
 
