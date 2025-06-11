@@ -55,7 +55,7 @@
         };
 
         hm_ctrl_l: hm_ctrl_l {
-          compatible: "zkm,behavior-hold-tap"; 
+          compatible = "zkm,behavior-hold-tap"; 
           #binding-cells = <2>; 
           bindings = <&kp>, <&kp>;
 
