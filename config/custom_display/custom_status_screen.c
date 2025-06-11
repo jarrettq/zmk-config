@@ -6,18 +6,11 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include <zmk/display.h>
-#include <zmk/display/widgets/output_status.h>
-#include <zmk/display/widgets/battery_status.h>
-#include <zmk/display/widgets/layer_status.h>
 #include "custom_image.h"
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #if IS_ENABLED(CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM)
-
-static struct zmk_widget_layer_status layer_status_widget;
-static struct zmk_widget_battery_status battery_status_widget;
-static struct zmk_widget_output_status output_status_widget;
 
 lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *screen = lv_obj_create(NULL);
@@ -38,21 +31,16 @@ lv_obj_t *zmk_display_status_screen() {
     lv_img_set_src(img, &niceview_oled_img);
     lv_obj_center(img);
     
-    // Create status container at bottom
-    lv_obj_t *status_container = lv_obj_create(screen);
-    lv_obj_set_size(status_container, 128, 16);
-    lv_obj_align(status_container, LV_ALIGN_BOTTOM_MID, 0, 0);
-    lv_obj_set_style_bg_opa(status_container, LV_OPA_TRANSP, 0);
-    lv_obj_set_style_border_opa(status_container, LV_OPA_TRANSP, 0);
-    lv_obj_set_flex_flow(status_container, LV_FLEX_FLOW_ROW);
-    lv_obj_set_flex_align(status_container, LV_FLEX_ALIGN_SPACE_BETWEEN, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
-    
-    // Initialize status widgets
-    zmk_widget_layer_status_init(&layer_status_widget, status_container);
-    zmk_widget_battery_status_init(&battery_status_widget, status_container);
-    zmk_widget_output_status_init(&output_status_widget, status_container);
+    // Add simple status overlay
+    lv_obj_t *status_label = lv_label_create(screen);
+    lv_label_set_text(status_label, "R");
+    lv_obj_set_style_text_color(status_label, lv_color_white(), LV_PART_MAIN);
+    lv_obj_set_style_text_font(status_label, &lv_font_montserrat_10, LV_PART_MAIN);
+    lv_obj_align(status_label, LV_ALIGN_BOTTOM_RIGHT, -2, -2);
     
     return screen;
 }
+
+#endif // CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
 
 #endif // CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
