@@ -23,6 +23,7 @@
 #define CTL_L &hm_r RCTRL L //mod-tap ctrl for right hand
 #define ALT_U &hm_r RALT U //mod-tap alt for right hand
 #define GUI_Y &hm_r RGUI Y //mod-tap windows for right hand
+#define CTL_SPC &hm_ctrl_l LCTRL SPACE
 
 / {
   behaviors {        hm_l: homerow_mods_left {
@@ -52,6 +53,17 @@
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
         };
+
+        hm_ctrl_l: hm_ctrl_l {
+          compatible: "zkm,behavior-hold-tap"; 
+          #binding-cells = <2>; 
+          bindings = <&kp>, <&kp>;
+
+          flavor: "hold-preferred";
+          tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+          quick-tap-ms = <175>;
+          require-prior-idle-ms = <HM_PRIOR_IDLE;
+        }
   };
 
   keymap {
@@ -68,20 +80,20 @@
         &kp LSFT    &kp Z      &kp X        &kp C        &kp D         &kp V
         &kp K       &kp H      &kp COMMA    &kp DOT      &kp FSLH      &kp BSLH
 
-                     &kp LGUI  &mo 1        &hm_l LCTRL SPACE  &kp SPACE   &kp RSFT &lt 2 ENTER
+                     &kp LGUI  &mo 1        CTL_SPC  &kp SPACE   &kp RSFT &lt 2 ENTER
       >;
     };
 
     layer_1 {
       bindings = <
         &trans      &trans     &trans       &kp UP       &trans        &trans
-        &trans      &kp 7      &kp 8        &kp 9        &trans        &kp GRAVE
+        &trans      &kp N7      &kp N8        &kp N9        &trans        &kp GRAVE
 
         &kp DEL     &trans     &kp LEFT     &kp DOWN     &kp RIGHT     &kp LPAR
-        &kp RPAR       &kp 4      &kp 5        &kp 6        &kp EQUAL     &trans
+        &kp RPAR       &kp N4      &kp N5        &kp N6        &kp EQUAL     &trans
 
         &trans      &trans     &trans       &trans       &trans        &kp LBKT
-        &kp RBKT    &kp 1      &kp 2        &kp 3        &kp MINUS     &mo 2
+        &kp RBKT    &kp N1      &kp N2        &kp N3        &kp MINUS     &mo 2
 
                      &trans    &trans        &trans       &trans        &trans   &kp 0
       >;
