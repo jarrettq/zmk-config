@@ -277,21 +277,21 @@ include:
 ```yaml
 include:
   # Left peripheral (no longer central, Studio removed)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_left nice_view_adapter nice_view
   
   # Right peripheral
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_right nice_view_adapter nice_view
   
   # Dongle central with prospector display
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: corne_dongle prospector_adapter
   
   # Settings reset firmware (flash after main firmware)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
 ```
 
@@ -428,6 +428,11 @@ Flash the new ZMK firmware:
 ## 🐛 Troubleshooting
 
 ### Build Fails
+
+**Error:** `Invalid BOARD; see above` or `nice_nano_v2` not found
+- **Cause:** ZMK breaking change - board names updated in v0.3.0 (August 2025)
+- **Fix:** Use `nice_nano` instead of `nice_nano_v2`, `xiao_ble` instead of `seeeduino_xiao_ble`
+- **Status:** ✅ **FIXED** in commit 4cad927
 
 **Error:** `zmk,underglow chosen node must be declared`
 - **Cause:** RGB underglow enabled but no LED hardware defined
