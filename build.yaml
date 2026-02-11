@@ -14,19 +14,19 @@
 ---
 include:
   # Left peripheral (no longer central, Studio removed)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_left nice_view_adapter nice_view
   
   # Right peripheral
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_right nice_view_adapter nice_view
   
   # Dongle central with prospector display
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: corne_dongle prospector_adapter
   
   # Settings reset firmware (flash after main firmware)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
