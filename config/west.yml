@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/urob
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: jarrettq
+      url-base: https://github.com/jarrettq
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,7 +17,7 @@ manifest:
       remote: urob
       revision: main
     - name: prospector-zmk-module
-      remote: carrefinho
+      remote: jarrettq
       revision: main
   self:
     path: config
