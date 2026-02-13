@@ -3,8 +3,9 @@ if SHIELD_NICE_VIEW_CUSTOM
 config LV_Z_VDB_SIZE
     default 100
 
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
 
 config NICE_VIEW_CUSTOM_WIDGET
     bool "Custom nice!view widget with per-half logos"
@@ -13,8 +14,9 @@ config NICE_VIEW_CUSTOM_WIDGET
     select LV_USE_IMG
     select LV_USE_CANVAS
 
-config ZMK_DISPLAY_WORK_QUEUE_DEDICATED
-    default y
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
 
 config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
     default 2048
