@@ -1,0 +1,23 @@
+/*
+ * Custom nice!view display overlay
+ * Uses the same Sharp Memory LCD as the stock nice_view shield.
+ * Requires nice_view_adapter to provide the &nice_view_spi bus.
+ */
+
+&nice_view_spi {
+    status = "okay";
+
+    nice_view: ls0xx@0 {
+        compatible = "sharp,ls0xx";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        width = <160>;
+        height = <68>;
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &nice_view;
+    };
+};
