@@ -17,7 +17,7 @@ struct peripheral_state {
 struct zmk_widget_peripheral_screen {
     sys_snode_t node;
     lv_obj_t *obj;
-    uint8_t cbuf[CANVAS_BUF_SIZE];
+    lv_color_t cbuf[CANVAS_SIZE * CANVAS_SIZE];
     struct peripheral_state state;
 };
 

@@ -50,11 +50,13 @@ static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
  * Content is drawn in "portrait" (y = reading direction)
  * and then rotated 270° to match the physical display orientation.
  */
-static void draw_top(lv_obj_t *widget_obj, const struct peripheral_state *state) {
+static void draw_top(lv_obj_t *widget_obj, lv_color_t cbuf[], const struct peripheral_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget_obj, 0);
 
     /* Fill background */
-    lv_canvas_fill_bg(canvas, BACKGROUND, LV_OPA_COVER);
+    lv_draw_rect_dsc_t rect_bg_dsc;
+    init_rect_dsc(&rect_bg_dsc, BACKGROUND);
+    lv_canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &rect_bg_dsc);
 
     /* Draw battery percentage */
     lv_draw_label_dsc_t label_dsc;
@@ -65,18 +67,11 @@ static void draw_top(lv_obj_t *widget_obj, const struct peripheral_state *state)
     lv_canvas_draw_text(canvas, 2, 4, 64, &label_dsc, bat_text);
 
     /* Draw connection status */
-    init_label_dsc(&label_dsc, FOREGROUND, &lv_font_montserrat_16, LV_TEXT_ALIGN_RIGHT);
-    const char *conn_text = state->connected ? LV_SYMBOL_WIFI : LV_SYMBOL_CLOSE;
-    lv_canvas_draw_text(canvas, 2, 28, 64, &label_dsc, conn_text);
+    lv_canvas_draw_text(canvas, 2, 28, 64, &label_dsc,
+                        state->connected ? LV_SYMBOL_WIFI : LV_SYMBOL_CLOSE);
 
-    /* Rotate canvas 270° for physical display orientation */
-    struct zmk_widget_peripheral_screen *w;
-    SYS_SLIST_FOR_EACH_CONTAINER(&widgets, w, node) {
-        if (w->obj == widget_obj) {
-            rotate_canvas(canvas, (lv_color_t *)w->cbuf);
-            break;
-        }
-    }
+    /* Rotate canvas for physical display orientation */
+    rotate_canvas(canvas, cbuf);
 }
 
 /**
@@ -92,7 +87,7 @@ struct battery_status_state {
 static void set_battery_status(struct zmk_widget_peripheral_screen *widget,
                                struct battery_status_state state) {
     widget->state.battery = state.level;
-    draw_top(widget->obj, &widget->state);
+    draw_top(widget->obj, widget->cbuf, &widget->state);
 }
 
 static void battery_status_update_cb(struct battery_status_state state) {
@@ -103,9 +98,8 @@ static void battery_status_update_cb(struct battery_status_state state) {
 }
 
 static struct battery_status_state battery_status_get_state(const zmk_event_t *eh) {
-    const struct zmk_battery_state_changed *ev = as_zmk_battery_state_changed(eh);
     return (struct battery_status_state){
-        .level = (ev != NULL) ? ev->state_of_charge : zmk_battery_state_of_charge(),
+        .level = zmk_battery_state_of_charge(),
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
         .usb_present = zmk_usb_is_powered(),
 #endif
@@ -129,7 +123,7 @@ struct peripheral_conn_state {
 static void set_conn_status(struct zmk_widget_peripheral_screen *widget,
                             struct peripheral_conn_state state) {
     widget->state.connected = state.connected;
-    draw_top(widget->obj, &widget->state);
+    draw_top(widget->obj, widget->cbuf, &widget->state);
 }
 
 static void conn_status_update_cb(struct peripheral_conn_state state) {
