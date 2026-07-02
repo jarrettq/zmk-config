@@ -2,22 +2,19 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: urob
-      url-base: https://github.com/urob
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
-    - name: jarrettq
-      url-base: https://github.com/jarrettq
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-    - name: zmk-helpers
-      remote: urob
-      revision: main
-    - name: prospector-zmk-module
-      remote: jarrettq
-      revision: main
+    - name: corne-min-rgbled
+      url: https://github.com/MechboardsLTD/zmk-module
+      revision: corne-min-rgbled
+    - name: corne-min-board
+      url: https://github.com/MechboardsLTD/zmk-module
+      revision: corne-min
+    - name: prospector-module
+      url: https://github.com/MechboardsLTD/zmk-module
+      revision: prospector
   self:
     path: config

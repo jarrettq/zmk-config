@@ -149,7 +149,7 @@ int zmk_widget_layer_roller_init(struct zmk_widget_layer_roller *widget, lv_obj_
 
     lv_obj_set_style_text_font(widget->obj, &FRAC_Regular_48, LV_PART_SELECTED);
     /* MODIFIED: dark yellow instead of white for the active layer name */
-    lv_obj_set_style_text_color(widget->obj, lv_color_hex(0xCCA000), LV_PART_SELECTED);
+    lv_obj_set_style_text_color(widget->obj, lv_color_hex(0xFEB200), LV_PART_SELECTED);
 
     lv_obj_set_style_text_font(widget->obj, &FRAC_Thin_48, LV_PART_MAIN);
     lv_obj_set_style_text_color(widget->obj, lv_color_hex(0x909090), LV_PART_MAIN);

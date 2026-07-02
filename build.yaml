@@ -13,22 +13,30 @@
 #
 ---
 include:
-  # Left peripheral
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view_custom
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  
-  # Right peripheral
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view_custom
-    cmake-args: -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  
-  # Dongle central with prospector display
+  # Left peripheral (for use with prospector dongle)
+  - board: corne_min_left
+    shield: rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: corne_min_left_for_prospector
+
+  # Right peripheral (for use with prospector dongle)
+  - board: corne_min_right
+    shield: rgbled_adapter
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: corne_min_right_for_prospector
+
+  # Prospector dongle central with display
   - board: seeeduino_xiao_ble
-    shield: corne_dongle prospector_adapter
-  
-  # Settings reset firmware (flash after main firmware)
-  - board: nice_nano_v2
+    shield: corne_min_dongle prospector_adapter
+    artifact-name: prospector_for_corne_min
+
+  # Settings reset (flash after main firmware if anything goes sideways)
+  - board: corne_min_left
     shield: settings_reset
+    artifact-name: corne_min_settings_reset
+  - board: corne_min_right
+    shield: settings_reset
+    artifact-name: corne_min_right_settings_reset
   - board: seeeduino_xiao_ble
     shield: settings_reset
+    artifact-name: prospector_settings_reset
