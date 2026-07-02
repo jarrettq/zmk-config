@@ -27,8 +27,8 @@ include:
 
   # Prospector dongle central with display
   - board: seeeduino_xiao_ble
-    shield: corne_min_dongle prospector_adapter
-    artifact-name: prospector_for_corne_min
+    shield: corne_dongle prospector_adapter
+    artifact-name: prospector_for_corne
 
   # Settings reset (flash after main firmware if anything goes sideways)
   - board: corne_min_left
