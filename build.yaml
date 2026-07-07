@@ -16,18 +16,19 @@ include:
   # Left peripheral (for use with prospector dongle)
   - board: corne_min_left
     shield: rgbled_adapter
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_STUDIO=y
     artifact-name: corne_min_left_for_prospector
 
   # Right peripheral (for use with prospector dongle)
   - board: corne_min_right
     shield: rgbled_adapter
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_STUDIO=y
     artifact-name: corne_min_right_for_prospector
 
   # Prospector dongle central with display
   - board: seeeduino_xiao_ble
     shield: corne_min_dongle prospector_adapter
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: prospector_for_corne_min
 
   # Settings reset (flash after main firmware if anything goes sideways)
